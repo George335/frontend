@@ -1,0 +1,20 @@
+<div class="clear"></div>
+<h1>Crear nuevo usuario</h1>
+<form>
+  <div class="form-row main-form">
+    <div *ngIf="!isValid" class="alert alert-danger">
+      <strong>Atención!</strong> {{message}}.
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputNombre">
+        <span class="required">*Nombre</span>
+      </label>
+      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="user.name" placeholder="Ingrese su nombre">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputSalario">Salario</label>
+      <input type="text" class="form-control" name="salary" id="salary" [(ngModel)]="user.salary" placeholder="Ingrese el salario">
+    </div>
+    <button type="submit" (click)="saveOrUpdate()" class="btn btn-info btn-save">Guardar</button>
+  </div>
+</form>
